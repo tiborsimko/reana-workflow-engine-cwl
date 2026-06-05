@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of REANA.
-# Copyright (C) 2018, 2019, 2020, 2021, 2022, 2025 CERN.
+# Copyright (C) 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025, 2026 CERN.
 #
 # REANA is free software; you can redistribute it and/or modify it
 # under the terms of the MIT License; see LICENSE file for more details.
@@ -265,6 +265,10 @@ class ReanaPipelineJob(JobBase):
         rucio = self._get_hint("rucio")
         htcondor_max_runtime = self._get_hint("htcondor_max_runtime")
         htcondor_accounting_group = self._get_hint("htcondor_accounting_group")
+        htcondor_request_cpus = self._get_hint("htcondor_request_cpus")
+        htcondor_request_memory = self._get_hint("htcondor_request_memory")
+        htcondor_request_disk = self._get_hint("htcondor_request_disk")
+        htcondor_requirements = self._get_hint("htcondor_requirements")
         slurm_partition = self._get_hint("slurm_partition")
         slurm_time = self._get_hint("slurm_time")
         kubernetes_uid = self._get_hint("kubernetes_uid")
@@ -291,6 +295,10 @@ class ReanaPipelineJob(JobBase):
             "rucio": rucio,
             "htcondor_max_runtime": htcondor_max_runtime,
             "htcondor_accounting_group": htcondor_accounting_group,
+            "htcondor_request_cpus": htcondor_request_cpus,
+            "htcondor_request_memory": htcondor_request_memory,
+            "htcondor_request_disk": htcondor_request_disk,
+            "htcondor_requirements": htcondor_requirements,
             "kubernetes_uid": kubernetes_uid,
             "kubernetes_cpu_request": kubernetes_cpu_request,
             "kubernetes_cpu_limit": kubernetes_cpu_limit,
